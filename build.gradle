@@ -1,0 +1,17 @@
+apply plugin: 'java'
+
+tasks.withType(Test) {
+    useTestNG()
+    testLogging {
+        events 'passed', 'failed'
+    }
+}
+
+dependencies {
+    compile 'uk.co.automatictester:lightning-core:5.10.1'
+    testCompile 'org.testng:testng:6.14.3'
+}
+
+repositories {
+    mavenCentral()
+}
